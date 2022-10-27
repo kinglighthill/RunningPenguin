@@ -79,12 +79,13 @@ public class PlayerMotor : MonoBehaviour
             verticalVelocity = -0.1f;
 
 
-            //if (Input.GetKeyDown(KeyCode.Space))
+            //if (Input.GetKeyDown(KeyCode.UpArrow))
             if (MobileInput.Instance.SwipeUp)
             {
                 anim.SetTrigger("Jump");
                 verticalVelocity = jumpForce;
             }
+            //else if (Input.GetKeyDown(KeyCode.DownArrow))
             else if (MobileInput.Instance.SwipeDown)
             {
                 StartSliding();
@@ -95,7 +96,7 @@ public class PlayerMotor : MonoBehaviour
         {
             verticalVelocity -= (gravity * Time.deltaTime);
 
-            //if (Input.GetKeyDown(KeyCode.Space))
+            //if (Input.GetKeyDown(KeyCode.DownArrow))
             if (MobileInput.Instance.SwipeDown)
             {
                 verticalVelocity = -jumpForce;
